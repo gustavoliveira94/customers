@@ -1,6 +1,6 @@
 module.exports = {
   roots: ['<rootDir>/src'],
-  setupFilesAfterEnv: ['<rootDir>/src/config/jest/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/configs/jest/setupTests.ts'],
   moduleFileExtensions: ['ts', 'js', 'tsx', 'jsx'],
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
@@ -10,6 +10,15 @@ module.exports = {
   testPathIgnorePatterns: ['node_modules'],
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
-    '^.+\\.svg$': '<rootDir>/src/config/jest/__mocks__/svgrMock.ts',
+    '^.+\\.svg$': '<rootDir>/src/configs/jest/__mocks__/svgrMock.ts',
+  },
+  moduleNameMapper: {
+    '^root(.*)$': '<rootDir>/src$1',
+    '^configs(.*)$': '<rootDir>/src/configs$1',
+    '^data(.*)$': '<rootDir>/src/data$1',
+    '^domain(.*)$': '<rootDir>/src/domain$1',
+    '^infra(.*)$': '<rootDir>/src/infra$1',
+    '^presentation(.*)$': '<rootDir>/src/presentation$1',
+    '^.+\\.(css|less)$': '<rootDir>/src/config/CSSStub.js',
   },
 };
