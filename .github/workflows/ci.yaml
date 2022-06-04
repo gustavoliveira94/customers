@@ -3,7 +3,7 @@ on:
   push:
     branches: [master]
 jobs:
-  Checkout:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -13,7 +13,7 @@ jobs:
         with:
           cache: 'npm'
       - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v20 #deploy
+        uses: BetaHuhn/deploy-to-vercel-action@v1 #deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           vercel-org-id: ${{ secrets.ORG_ID}} #Required
