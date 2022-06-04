@@ -12,10 +12,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: 'npm'
-  Deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: amondnet/vercel-action@v20 #deploy
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20 #deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           vercel-org-id: ${{ secrets.ORG_ID}} #Required
