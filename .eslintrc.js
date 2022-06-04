@@ -20,6 +20,9 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'import/prefer-default-export': 'off',
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -37,6 +40,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-unresolved': 'off',
   },
   settings: {
     'import/resolver': {
