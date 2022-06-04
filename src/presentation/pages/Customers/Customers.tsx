@@ -11,7 +11,11 @@ export const Customers: React.FC = () => {
         <h1>Clientes</h1>
         <p>
           {data?.length
-            ? data.map(({ name }) => <p data-testid="customer">{name}</p>)
+            ? data.map(({ name, id }) => (
+                <p key={id} data-testid="customer">
+                  {name}
+                </p>
+              ))
             : null}
         </p>
       </header>

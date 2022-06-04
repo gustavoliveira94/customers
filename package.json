@@ -10,20 +10,21 @@
     "@types/node": "^16.11.38",
     "@types/react": "^18.0.10",
     "@types/react-dom": "^18.0.5",
+    "axios": "^0.27.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
     "typescript": "^4.7.2",
-    "axios": "^0.27.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --passWithNoTests",
-    "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "test:ci": "jest --coverage",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +57,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "husky": "^8.0.0",
     "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "prettier": "^2.6.2",
     "ts-jest": "^28.0.3"
   }

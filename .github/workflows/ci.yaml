@@ -1,7 +1,9 @@
 name: customers project
-on: pull_request
+on:
+  push:
+    branches: [master]
 jobs:
-  Build:
+  Checkout:
     name: Build
     runs-on: ubuntu-latest
     steps:
@@ -11,3 +13,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           cache: 'npm'
+    Deploy:
+      name: Deploy
+      steps:
+        - uses: amondnet/vercel-action@v20 #deploy
+          with:
+            vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+            vercel-org-id: ${{ secrets.ORG_ID}} #Required
+            vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
+            working-directory: ./
