@@ -5,13 +5,23 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   coverageReporters: ['json-summary', 'text', 'lcov'],
-  collectCoverageFrom: ['src'],
   coveragePathIgnorePatterns: ['styles.ts', 'style.ts'],
-  testPathIgnorePatterns: ['node_modules'],
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
     '^.+\\.svg$': '<rootDir>/src/configs/jest/__mocks__/svgrMock.ts',
   },
+  collectCoverageFrom: [
+    '<rootDir>/src/presentation/ui/components/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/presentation/pages/**/*.{js,jsx,ts,tsx}',
+    '!**/index.ts',
+    '!**/node_modules/**',
+  ],
+  testPathIgnorePatterns: [
+    '<rootDir>/build/',
+    '<rootDir>/src/configs',
+    '<rootDir>/src/data',
+    '<rootDir>/src/domain',
+  ],
   moduleNameMapper: {
     '^root(.*)$': '<rootDir>/src$1',
     '^configs(.*)$': '<rootDir>/src/configs$1',
@@ -19,6 +29,5 @@ module.exports = {
     '^domain(.*)$': '<rootDir>/src/domain$1',
     '^infra(.*)$': '<rootDir>/src/infra$1',
     '^presentation(.*)$': '<rootDir>/src/presentation$1',
-    '^.+\\.(css|less)$': '<rootDir>/src/config/CSSStub.js',
   },
 };
