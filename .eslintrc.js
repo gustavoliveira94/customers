@@ -24,6 +24,11 @@ module.exports = {
     'react/function-component-definition': 0,
     'no-use-before-define': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'react/require-default-props': 'off',
+    'react/prop-types': 'off',
+    'consistent-return': 'off',
+    'react/no-unused-prop-types': 'off',
+    'react/jsx-no-useless-fragment': 'off',
     'prettier/prettier': [
       'error',
       {
