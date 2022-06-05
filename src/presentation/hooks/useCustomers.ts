@@ -23,6 +23,6 @@ export const useCustomers = (): HttpResponse<Customer[]> => {
 
   return {
     statusCode: data.statusCode,
-    data: data.data,
+    data: data.data || [],
   };
 };

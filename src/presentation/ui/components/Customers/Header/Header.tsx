@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 import { UserIcon, ArrowDown, ArrowUp } from 'presentation/assets';
 import { ICustomers } from '../Customers';
@@ -26,24 +26,31 @@ export const Header: React.FC<ICustomers> = ({ data: customers }) => {
 
   return (
     <>
-      {customers?.length
+      {customers.length
         ? customers.map(({ id, address, company, website }, index) => {
             const isOpen = index === open;
 
             return (
-              <Container data-testid="customer" key={id} open={isOpen}>
+              <Container
+                data-testid="customer"
+                key={id + address.geo.lat}
+                open={isOpen}
+              >
                 <>
-                  <Content onClick={() => openDetails(index)}>
+                  <Content
+                    data-testid="open-button"
+                    onClick={() => openDetails(index)}
+                  >
                     <UserIcon />
                     {Object.entries(infos(index)).map((info) => {
                       const field = info[0];
                       const value = info[1];
 
                       return (
-                        <>
+                        <Fragment key={field + value}>
                           <Field>{field}:</Field>
                           <Value>{value}</Value>
-                        </>
+                        </Fragment>
                       );
                     })}
                     {isOpen ? <ArrowDown /> : <ArrowUp />}

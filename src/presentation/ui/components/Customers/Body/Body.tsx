@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { IAddress, ICompany } from 'domain/models/customer';
 
@@ -22,16 +22,16 @@ export const Body: React.FC<IBody> = ({ address, company, website }) => {
   };
 
   return (
-    <Container id="details">
+    <Container id="details" data-testid="details">
       {Object.entries(infos).map((info) => {
         const field = info[0];
         const value = info[1];
 
         return (
-          <>
+          <Fragment key={website + address.geo.lng}>
             <Field>{field}:</Field>
             <Value>{value}</Value>
-          </>
+          </Fragment>
         );
       })}
     </Container>
