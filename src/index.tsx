@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import { Template } from 'presentation/template/Template';
+
 import { Routers } from './presentation/routers';
 
 const root = ReactDOM.createRoot(
@@ -8,6 +10,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Routers />
+    <Template>
+      <Routers />
+    </Template>
   </React.StrictMode>,
 );
