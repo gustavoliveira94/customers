@@ -1,5 +1,5 @@
-import { Customer } from 'domain/models/customer';
+import { ICustomer } from 'domain/models/customer';
 
 export interface Customers {
-  customers(): Promise<Customer[]>;
+  customers(): Promise<ICustomer[]>;
 }

@@ -1,14 +1,16 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 
 import { UserIcon, ArrowDown, ArrowUp } from 'presentation/assets';
-import { ICustomers } from '../Customers';
+import { CustomersContext } from 'presentation/providers';
 
 import { Body } from '../Body/Body';
 
 import { Container, Field, Value, Content } from './styles';
 
-export const Header: React.FC<ICustomers> = ({ data: customers }) => {
+export const Header: React.FC = () => {
   const [open, setOpen] = useState<number | null>();
+
+  const { customers } = useContext(CustomersContext);
 
   const openDetails = (index: number) => {
     if (index === open) {
@@ -26,14 +28,14 @@ export const Header: React.FC<ICustomers> = ({ data: customers }) => {
 
   return (
     <>
-      {customers.length
+      {customers?.length
         ? customers.map(({ id, address, company, website }, index) => {
             const isOpen = index === open;
 
             return (
               <Container
                 data-testid="customer"
-                key={id + address.geo.lat}
+                key={id + address.zipcode}
                 open={isOpen}
               >
                 <>

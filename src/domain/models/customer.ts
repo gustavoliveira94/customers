@@ -15,7 +15,7 @@ export interface IAddress {
   };
 }
 
-export interface Customer {
+export interface ICustomer {
   id: number;
   name: string;
   username: string;

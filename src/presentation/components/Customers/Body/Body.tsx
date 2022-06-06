@@ -28,7 +28,7 @@ export const Body: React.FC<IBody> = ({ address, company, website }) => {
         const value = info[1];
 
         return (
-          <Fragment key={website + address.geo.lng}>
+          <Fragment key={website + address.zipcode}>
             <Field>{field}:</Field>
             <Value>{value}</Value>
           </Fragment>

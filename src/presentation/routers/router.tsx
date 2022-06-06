@@ -1,14 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
-import { Customers } from 'presentation/pages';
+import { Customers, CreateCustomer } from 'presentation/pages';
+
+import { ROUTES } from 'domain/models/routes';
 
 export const Routers: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Customers />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path={ROUTES.HOME} element={<Customers />} />
+      <Route path={ROUTES.CREATE_CUSTOMER} element={<CreateCustomer />} />
+    </Routes>
   );
 };
