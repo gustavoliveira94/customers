@@ -23,6 +23,11 @@ export const Container = styled.div<{ open: boolean }>`
   svg {
     margin-right: 20px;
 
+    :first-child {
+      min-width: 30px;
+      min-height: 30px;
+    }
+
     :last-child {
       position: absolute;
       right: 20px;
@@ -41,9 +46,11 @@ export const Content = styled.div`
 export const Field = styled.p`
   font-weight: 600;
   margin-right: 10px;
+  white-space: nowrap;
 `;
 
 export const Value = styled.p`
   width: 200px;
   margin-right: 60px;
+  white-space: nowrap;
 `;
