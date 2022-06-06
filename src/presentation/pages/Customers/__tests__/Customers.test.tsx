@@ -3,12 +3,12 @@ import React from 'react';
 
 import { render } from 'configs/jest/helper/helper';
 
-import { Customer } from 'domain/models/customer';
+import { ICustomer } from 'domain/models/customer';
 import customersData from './mock.json';
 
 import { Customers } from '../Customers';
 
-let data: Customer[] = [];
+let data: ICustomer[] = [];
 
 jest.mock('presentation/hooks/useCustomers', () => ({
   useCustomers: () => ({

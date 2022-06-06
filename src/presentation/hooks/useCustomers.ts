@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { HttpResponse } from 'data/protocols/http/httpResponse';
 
 import { customers } from 'data/usecases/customers/customers';
-import { Customer } from 'domain/models/customer';
+import { ICustomer } from 'domain/models/customer';
 
-export const useCustomers = (): HttpResponse<Customer[]> => {
+export const useCustomers = (): HttpResponse<ICustomer[]> => {
   const [data, setData] = useState<HttpResponse>({} as HttpResponse);
 
   const getCustomers = async () => {

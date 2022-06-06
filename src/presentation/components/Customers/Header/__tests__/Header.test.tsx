@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable prefer-const */
 import React from 'react';
 import { fireEvent } from '@testing-library/react';
 
 import { render } from 'configs/jest/helper/helper';
+import { CustomersContext } from 'presentation/providers';
 
 import customersData from './mock.json';
 
@@ -10,7 +12,13 @@ import { Header } from '../Header';
 
 describe('Testing Page <Header />', () => {
   it('Should render customers', () => {
-    const { getAllByTestId } = render(<Header data={customersData} />);
+    const { getAllByTestId } = render(
+      <CustomersContext.Provider
+        value={{ customers: customersData, setCustomers: jest.fn() }}
+      >
+        <Header />
+      </CustomersContext.Provider>,
+    );
 
     const customers = getAllByTestId('customer');
 
@@ -18,7 +26,13 @@ describe('Testing Page <Header />', () => {
   });
 
   it('Should toggle render details', () => {
-    const { getAllByTestId } = render(<Header data={customersData} />);
+    const { getAllByTestId } = render(
+      <CustomersContext.Provider
+        value={{ customers: customersData, setCustomers: jest.fn() }}
+      >
+        <Header />
+      </CustomersContext.Provider>,
+    );
 
     const details = getAllByTestId('details')[0];
     expect(details).toHaveStyle('height: 0');
@@ -34,7 +48,13 @@ describe('Testing Page <Header />', () => {
   });
 
   it('Should not render details', () => {
-    const { queryAllByTestId } = render(<Header data={[]} />);
+    const { queryAllByTestId } = render(
+      <CustomersContext.Provider
+        value={{ customers: [], setCustomers: jest.fn() }}
+      >
+        <Header />
+      </CustomersContext.Provider>,
+    );
 
     const customers = queryAllByTestId('customer');
     expect(customers).toHaveLength(0);
