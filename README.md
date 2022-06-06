@@ -14,6 +14,11 @@ Visualização: [Projeto](https://customers-one.vercel.app/)
 4. Instale as dependências do projeto: `yarn install` ou `npm install`
 5. Inicie o ambiente de desenvolvimento: `npm start` ou `yarn start`.
 
+## Rodando testes
+
+1. `npm run test:ci` - Roda os testes unitários com coverage
+2. `npm run cypress:open` - Roda o teste EndToEnd
+
 ## Principais dependências
 
 * [React](https://reactjs.org/)
