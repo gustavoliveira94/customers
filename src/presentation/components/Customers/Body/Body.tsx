@@ -14,7 +14,7 @@ export const Body: React.FC<IBody> = ({ address, company, website }) => {
   const infos = {
     Endereço: `Rua: ${address.street}, Complemento ${address.suite} - Cidade: ${address.city} - CEP: ${address.zipcode}`,
     Site: (
-      <a href={website} target="_blank" rel="noreferrer">
+      <a href={`https://${website}`} target="_blank" rel="noreferrer">
         {website}
       </a>
     ),
