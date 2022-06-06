@@ -11,8 +11,11 @@ module.exports = {
     '^.+\\.svg$': '<rootDir>/src/configs/jest/__mocks__/svgrMock.ts',
   },
   collectCoverageFrom: [
-    '<rootDir>/src/presentation/ui/components/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/presentation/components/**/*.{js,jsx,ts,tsx}',
     '<rootDir>/src/presentation/pages/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/presentation/template/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/presentation/utils/**/*.{js,jsx,ts,tsx}',
+    '<rootDir>/src/presentation/providers/**/*.{js,jsx,ts,tsx}',
     '!**/index.ts',
     '!**/node_modules/**',
   ],

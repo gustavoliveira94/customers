@@ -7,7 +7,7 @@ export const Container = styled.div<{ open: boolean }>`
   position: relative;
   width: 100%;
   filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 4px 10px);
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.white};
   padding: 20px 25px;
   margin-bottom: 20px;
   transition: 0.5s;
