@@ -31,6 +31,6 @@ describe('App', () => {
 
     cy.get('[data-testid=button]').click(); // open route create-customer
     cy.wait(2000);
-    cy.contains('Voltar').click(); // back route home
+    cy.get('[data-testid=voltar]').click(); // back route home
   });
 });
