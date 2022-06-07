@@ -32,6 +32,10 @@ export const Container = styled.div<{ open: boolean }>`
       position: absolute;
       right: 20px;
     }
+
+    @media (max-width: 820px) {
+      margin: auto auto 15px;
+    }
   }
 `;
 
@@ -41,6 +45,11 @@ export const Content = styled.div`
   align-items: center;
   width: 100%;
   padding: 20px 0;
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 export const Field = styled.p`
@@ -53,4 +62,10 @@ export const Value = styled.p`
   width: 200px;
   margin-right: 60px;
   white-space: nowrap;
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
 `;
