@@ -1,8 +1,9 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { ROUTES } from 'domain/models/routes';
+import { ArrowLeft } from 'presentation/assets/ArrowLeft';
 
-import { useLocation } from 'react-router-dom';
 import { Container, Back } from './styles';
 
 export const Header: React.FC = () => {
@@ -11,7 +12,11 @@ export const Header: React.FC = () => {
 
   return (
     <Container>
-      {shouldRenderBack ? <Back to={ROUTES.HOME}>Voltar</Back> : null}
+      {shouldRenderBack ? (
+        <Back data-testid="voltar" to={ROUTES.HOME}>
+          <ArrowLeft height="14px" width="14px" />
+        </Back>
+      ) : null}
       <h2>Clientes</h2>
     </Container>
   );

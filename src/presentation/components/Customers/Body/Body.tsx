@@ -1,16 +1,12 @@
 import React, { Fragment } from 'react';
 
-import { IAddress, ICompany } from 'domain/models/customer';
+import { ICustomer } from 'domain/models/customer';
 
 import { Container, Field, Value } from './styles';
 
-export interface IBody {
-  address: IAddress;
-  website: string;
-  company: ICompany;
-}
-
-export const Body: React.FC<IBody> = ({ address, company, website }) => {
+export const Body: React.FC<
+  Pick<ICustomer, 'address' | 'company' | 'website'>
+> = ({ address, company, website }) => {
   const infos = {
     Endereço: `Rua: ${address.street}, Complemento ${address.suite} - Cidade: ${address.city} - CEP: ${address.zipcode}`,
     Site: (

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { theme } from 'presentation/utils';
+
 interface IUserIcon {
   fill?: string;
   width?: string;
@@ -7,7 +9,7 @@ interface IUserIcon {
 }
 
 export const UserIcon = ({
-  fill = '#000',
+  fill = theme.black,
   height = '30',
   width = '30',
 }: IUserIcon) => {
