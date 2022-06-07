@@ -21,25 +21,25 @@ describe('Testing Page <Header />', () => {
   });
 
   it('Should render Back', () => {
-    const { getByText } = render(
+    const { getByTestId } = render(
       <MemoryRouter initialEntries={[{ pathname: ROUTES.CREATE_CUSTOMER }]}>
         <Header />
       </MemoryRouter>,
     );
 
-    const back = getByText('Voltar');
+    const back = getByTestId('voltar');
 
     expect(back).toBeInTheDocument();
   });
 
   it('Should not render Back', () => {
-    const { queryByText } = render(
+    const { queryByTestId } = render(
       <MemoryRouter initialEntries={[{ pathname: ROUTES.HOME }]}>
         <Header />
       </MemoryRouter>,
     );
 
-    const back = queryByText('Voltar');
+    const back = queryByTestId('voltar');
 
     expect(back).not.toBeInTheDocument();
   });

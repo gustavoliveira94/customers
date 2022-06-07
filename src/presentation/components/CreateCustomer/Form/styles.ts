@@ -5,6 +5,10 @@ export const Container = styled.form`
   height: 500px;
   background-color: ${({ theme }) => theme.grey};
   margin: 60px auto;
+
+  @media (max-width: 820px) {
+    width: 90%;
+  }
 `;
 
 export const Header = styled.div`

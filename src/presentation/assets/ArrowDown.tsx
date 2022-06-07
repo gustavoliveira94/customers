@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { theme } from 'presentation/utils';
+
 interface ArrowDownProps {
   width?: string;
   height?: string;
@@ -7,7 +9,7 @@ interface ArrowDownProps {
 }
 
 export const ArrowDown = ({
-  fill = '#000',
+  fill = theme.black,
   width = '12',
   height = '8',
 }: ArrowDownProps) => {
